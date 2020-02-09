@@ -1,14 +1,176 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <!-- ******** TOP ******** -->
+    <div class="top-container">
+      <img class="nu-white-logo" src="assets/ionic-white-logo.png">
+      <span class="top-user-name">Fauzi</span>
+    </div>
+    <!-- ARROW DOWN -->
+    <div class="center" (click)="step = 1" *ngIf="step == 0 || step == -1">
+      <img class="arrow-down" src="assets/down-arrow.svg">
+    </div>
+    <!-- ARROW UP -->
+    <div class="center" (click)="step = 0" *ngIf="step == 1">
+      <img class="arrow-down rotate-arrow" src="assets/down-arrow.svg">
+    </div>
+  </div>
+
+  <!-- ******** MENU ******** -->
+  <div *ngIf="step == 1" [class.fade-in]="step == 1" [class.fade-out]="step == 0">
+    <div class="center">
+      <img class="qr-code" src="assets/qrcode.png">
+      <p class="menu-content">Banco <strong>000 - Ionic Pagamentos S.A.</strong></p>
+      <p class="menu-content">Agência <strong>0001</strong></p>
+      <p class="menu-content">Conta <strong>0000000-0</strong></p>
+    </div>
+
+    <div class="custom-padding">
+      <div class="item-menu-mid">
+        <ion-item>
+          <ion-icon class="icon-start" slot="start" name="ios-help-circle-outline"></ion-icon>
+          <ion-label class="menu-label">Me ajuda</ion-label>
+          <ion-icon class="icon-end" slot="end" name="ios-arrow-forward"></ion-icon>
+        </ion-item>
+      </div>
+      <div class="item-menu-mid">
+        <ion-item>
+          <ion-icon class="icon-start" slot="start" name="ios-contact"></ion-icon>
+          <ion-label class="menu-label">Perfil</ion-label>
+          <ion-icon class="icon-end" slot="end" name="ios-arrow-forward"></ion-icon>
+        </ion-item>
+      </div>
+      <div class="item-menu-mid">
+        <ion-item>
+          <ion-icon class="icon-start" slot="start" name="ios-cash"></ion-icon>
+          <ion-label class="menu-label">Configurar NuConta</ion-label>
+          <ion-icon class="icon-end" slot="end" name="ios-arrow-forward"></ion-icon>
+        </ion-item>
+      </div>
+      <div class="btn-action">
+        SAIR DA CONTA
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ******** CONTAINER ******** -->
+  <div class="featured-container" [class.moveToBottom]="step == 1" [class.moveToTop]="step == 0">
+    <!-- ******** CARD ******** -->
+    <!-- SKELETON -->
+    <div class="card-mid custom-skeleton animation-card" *ngIf="!loaded">
+      <div class="card-content">
+        <ion-skeleton-text class="credit-card" animated style="width: 30px; height: 20px;"></ion-skeleton-text>
+
+        <!-- CONTENT -->
+        <div class="card-container">
+          <ion-skeleton-text class="fatura-atual" animated style="width: 35%; height: 15px;"></ion-skeleton-text>
+          <ion-skeleton-text class="real" animated style="width: 80%; height: 32px;"></ion-skeleton-text>
+          <br>
+          <ion-skeleton-text class="limit" animated style="width: 60%; height: 15px;"></ion-skeleton-text>
+        </div>
+      </div>
+      <div class="card-footer">
+        <ion-row>
+          <ion-col size="2">
+            <ion-skeleton-text class="extract-image" animated style="width: 100%; height: 35px;"></ion-skeleton-text>
+          </ion-col>
+          <ion-col size="8">
+            <ion-skeleton-text class="extract-text" animated style="width: 100%; height: 35px;"></ion-skeleton-text>
+          </ion-col>
+          <ion-col size="2" class="right">
+            <img class="extract-image-arrow" style="visibility: hidden;" src="assets/right-arrow.svg">
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+    <!-- LOADED -->
+    <div class="card-mid" *ngIf="loaded">
+      <div class="card-content">
+        <img class="credit-card" src="assets/credit-card.svg">
+
+        <!-- CONTENT -->
+        <div class="card-container">
+          <p class="fatura-atual">FATURA ATUAL</p>
+          <span class="real">R$</span>
+          <span class="value">1.258</span>
+          <span class="cents">,40</span>
+          <br>
+          <span class="limit">Limite disponível</span>
+          <span class="limitReal">R$</span>
+          <span class="limitValue">4.800,00</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <ion-row>
+          <ion-col size="2">
+            <img class="extract-image" src="assets/cutlery.svg">
+          </ion-col>
+          <ion-col size="8">
+            <span class="extract-text">Compra mais recente em Loja no valor de R$ 84,90 hoje</span>
+          </ion-col>
+          <ion-col size="2" class="right">
+            <img class="extract-image-arrow" src="assets/right-arrow.svg">
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+  </div>
+
+  <!-- ******** FOOTER ******** -->
+  <div class="footer-menu" [class.moveToBottom2]="step == 1" [class.moveToTop]="step == 0">
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/friends.svg">
+      <p class="footer-text">
+        Indicar
+        <br>
+        amigos
+      </p>
+    </div>
+
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/money.svg">
+      <p class="footer-text">
+        Depositar
+      </p>
+    </div>
+
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/money-transfer.svg">
+      <p class="footer-text">
+        Transferir
+      </p>
+    </div>
+
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/barcode.svg">
+      <p class="footer-text">
+        Pagar
+        <br>
+        boleto
+      </p>
+    </div>
+
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/money-2.svg">
+      <p class="footer-text">
+        Cobrar
+      </p>
+    </div>
+
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/password.svg">
+      <p class="footer-text">
+        Bloquear
+        <br>
+        cartão
+      </p>
+    </div>
+
+    <div class="footer-item">
+      <img class="footer-icon" src="assets/question.svg">
+      <p class="footer-text">
+        Me ajuda
+      </p>
+    </div>
   </div>
 </ion-content>

@@ -7,6 +7,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  loaded: boolean = false;
+  step: number = -1;
+
+  constructor() { }
+
+  ionViewDidEnter() {
+    setTimeout(() => {
+      this.loaded = true;
+    }, 1500)
+  }
 
 }

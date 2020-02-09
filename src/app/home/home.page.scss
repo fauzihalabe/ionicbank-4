@@ -1,1 +1,279 @@
+ion-content {
+  --ion-background-color: var(--darkviolet);
+  --overflow: hidden !important;
+}
+.featured-container {
+  position: sticky;
+}
+.top-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.nu-white-logo {
+  width: 12%;
+  animation: slideInLeft 0.8s;
+}
+.top-user-name {
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-left: 10px;
+  animation-delay: 0.7s;
+  animation: 1s fadeIn, slideInLeft 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeIn {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+.arrow-down {
+  margin-top: 3%;
+  width: 3%;
+}
+.center {
+  text-align: center;
+}
+.footer-menu {
+  position: absolute;
+  bottom: 3%;
+  left: 5%;
+  white-space: nowrap;
+  overflow: auto;
+  overflow-y: hidden;
+  width: 100%;
+  padding-right: 8%;
+}
+.footer-menu::-webkit-scrollbar {
+  display: none;
+}
+.footer-item {
+  background-color: var(--lightviolet);
+  height: 100px;
+  width: 100px;
+  border-radius: 4px;
+  position: relative;
+  margin-right: 10px;
+  display: inline-block;
+}
+.footer-text {
+  font-weight: 300;
+  color: #fff;
+  position: absolute;
+  left: 10%;
+  bottom: -5%;
+  font-size: 15px;
+}
+.footer-icon {
+  width: 30%;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+}
+.card-mid {
+  background-color: white;
+  height: 400px;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 3px;
+  position: relative;
+}
+.card-footer {
+  background-color: #f7f7f7;
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-content {
+  padding: 40px;
+}
+.credit-card {
+  width: 10%;
+}
+.card-container {
+  margin-top: 20%;
+}
+.fatura-atual {
+  color: #00bcca;
+  font-weight: 800;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.real {
+  color: #00bcca;
+  font-size: 36px;
+}
+.value {
+  color: #00bcca;
+  font-size: 36px;
+  font-weight: 700;
+  margin-left: 2.5%;
+}
+.cents {
+  color: #00bcca;
+  font-size: 36px;
+}
+.limit {
+  color: #222;
+  margin-top: 0px;
+  font-size: 16px;
+}
+.limitReal {
+  color: #9ed230;
+  margin-top: 0px;
+  font-size: 16px;
+  font-weight: 800;
+  margin-left: 5px;
+}
+.limitValue {
+  color: #9ed230;
+  margin-top: 0px;
+  font-size: 16px;
+  font-weight: 800;
+  margin-left: 2.5px;
+}
+.extract-text {
+  color: #272727;
+  font-size: 13.5px;
+}
+.extract-image {
+  width: 80%;
+  margin-top: 10%;
+}
+.extract-image-arrow {
+  width: 30%;
+  margin-top: 35%;
+}
+.right {
+  text-align: right;
+}
+.animation-card {
+  animation-delay: 0.7s;
+  animation: 1s bounceInRight;
+  animation-fill-mode: forwards;
+}
+.footer-menu {
+  animation: 1.5s bounceInRight;
+  animation-fill-mode: forwards;
+}
+.moveToBottom {
+  animation: moveToBottom 0.5s forwards;
+}
+@keyframes moveToBottom {
+  100% {
+    transform: translateY(46%);
+  }
+}
+.moveToBottom2 {
+  animation: moveToBottom2 0.5s forwards;
+}
+@keyframes moveToBottom2 {
+  100% {
+    transform: translateY(130%);
+  }
+}
+.rotate-arrow {
+  transform: rotate(180deg);
+}
+.moveToTop {
+  animation: moveToTop 0.5s forwards;
+}
+@keyframes moveToTop {
+  0% {
+    transform: translateY(148.5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.qr-code {
+  width: 30%;
+}
+.menu-content {
+  color: #fff;
+  font-size: 13px;
+  margin: 4px;
+}
+.item-menu-mid {
+  border-bottom: 0.8px solid rgba(255, 255, 255, 0.452);
+  color: #fff;
+}
+.custom-padding {
+  padding: 0px 40px;
+}
+ion-item {
+  --padding-start: 0px;
+  --border-width: 0px;
+}
+ion-item:last-child {
+  --inner-border-width: 0;
+}
+.icon-start {
+  margin-right: 12px;
+  color: #fff;
+}
+.icon-end {
+  margin-right: 0px;
+  color: #fff;
+  font-size: 12px;
+}
+.menu-label {
+  color: #fff;
+}
+.btn-action {
+  color: #fff;
+  font-weight: 900;
+  font-size: 16px;
+  text-align: center;
+  border: 0.5px solid rgba(255, 255, 255, 0.452);
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+.item-inner {
+  border: none !important;
+}
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  @keyframes moveToBottom {
+    100% {
+      transform: translateY(73%);
+    }
+  }
 
+  @keyframes moveToBottom2 {
+    100% {
+      transform: translateY(130%);
+    }
+  }
+}
